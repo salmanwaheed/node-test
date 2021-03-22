@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  app:
+    build: .
+    container_name: node-test
+    restart: unless-stopped
+    command: /bin/sh -c 'nodemon -e js,html index.js'
+    ports:
+      - 9001:9001
+    volumes:
+      - .:/src
+      - /src/node_modules
+    environment:
+      VIRTUAL_HOST: example.net
+      VIRTUAL_PORT: 9001
+    network_mode: bridge
