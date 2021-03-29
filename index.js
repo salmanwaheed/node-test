@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 
 app.get('/', (req, res, next) => {
-  res.json({ message: "Welcome to the API......" })
+  res.json({ message: "Welcome to the API." })
 })
 
 app.use((req, res, next) => {
